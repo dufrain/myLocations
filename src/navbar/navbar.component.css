@@ -1,0 +1,13 @@
+a.nav-link, a.dropdown-item {
+    cursor: pointer;
+}
+
+.navbar {
+    border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+/* @media screen and (max-width: 767px) {
+    ul#search {
+      display: none;
+    }
+  } */

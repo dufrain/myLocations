@@ -1,0 +1,8 @@
+<div class="wrapper">
+    <div class="list-group" *ngFor="let category of categories">
+        <button type="button" (click)=onClick(category) 
+                [ngClass]="{'active': category.name==categoryService.activeName}"
+                class="list-group-item list-group-item-action text-left col-sm-5">{{category.name}}</button>
+    </div>
+</div>
+

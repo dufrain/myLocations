@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md navbar-light bg-white fixed-top b">
+  <a class="navbar-brand" routerLink="/" >{{this.title}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="isNavbarCollapsed = !isNavbarCollapsed" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-toggleable-xs navbar-collapse" id="exCollapsingNavbar2">
+    <ul class="navbar-nav ml-5 ">
+      <li class="nav-item">
+          <button class="btn btn-outline-success my-2 ml-5 mr-4 my-sm-0" routerLink="/category/list"
+          [hidden]="hideListButton">
+          View All
+          </button>
+      </li>
+      <li class="nav-item" [hidden]="hideNewButton">
+          <button class="btn btn-outline-success my-2 mr-4 my-sm-0" routerLink="/category/add"
+          (click)="newCategory()">
+          New Category
+          </button>
+      </li>
+      <li class="nav-item" [hidden]="!categoryService.activeName" >
+        <button class="btn btn-outline-success my-2 mr-4 my-sm-0"  routerLink="/category/edit">
+          Edit
+        </button>
+      </li>
+      <li class="nav-item" [hidden]="!categoryService.activeName">
+          <button class="btn btn-outline-success my-2 mr-4 my-sm-0" routerLink="/category">
+          View Details
+          </button>
+      </li>
+      <li class="nav-item" [hidden]="!categoryService.activeName">
+        <button class="btn btn-outline-success my-2 mr-4 my-sm-0" (click)="deleteCategory()">
+          Delete
+        </button>
+      </li>
+    </ul>
+  </div>
+ 
+</nav>
